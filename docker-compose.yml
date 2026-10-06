@@ -1,0 +1,8 @@
+services:
+  postgres:
+    image: postgres:17
+    environment: {POSTGRES_DB: perf, POSTGRES_USER: perf, POSTGRES_PASSWORD: perf}
+    ports: ['5433:5432']
+  redis:
+    image: redis:7-alpine
+    ports: ['6379:6379']
