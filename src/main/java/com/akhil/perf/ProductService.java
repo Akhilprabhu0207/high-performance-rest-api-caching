@@ -1,0 +1,1 @@
+package com.akhil.perf; import org.springframework.cache.annotation.Cacheable; import org.springframework.stereotype.Service; @Service public class ProductService{private final ProductRepository repo; public ProductService(ProductRepository r){repo=r;} @Cacheable(cacheNames="products",key="#id") public Product find(long id){return repo.findById(id).orElseThrow();}}
