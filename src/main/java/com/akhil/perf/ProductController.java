@@ -1,0 +1,1 @@
+package com.akhil.perf; import org.springframework.web.bind.annotation.*; @RestController @RequestMapping("/api/products") public class ProductController{private final ProductService service; public ProductController(ProductService s){service=s;} @GetMapping("/{id}") public Product get(@PathVariable long id){return service.find(id);}}
